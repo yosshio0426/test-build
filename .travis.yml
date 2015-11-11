@@ -7,3 +7,8 @@ cache:
   directories:
     - $HOME/.gradle/caches/
     - $HOME/.gradle/wrapper/
+before_script:
+  - git clone --quiet https://github.com/yosshio0426/mvn-repo.git repo
+  - cd repo
+  - git checkout -b gh-pages
+  - cd ..
