@@ -10,5 +10,5 @@ cache:
 before_script:
   - git clone --quiet https://github.com/yosshio0426/mvn-repo.git repo
   - cd repo
-  - git checkout -b gh-pages
+  - git checkout gh-pages
   - cd ..
