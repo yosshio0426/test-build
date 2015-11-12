@@ -14,3 +14,10 @@ before_script:
   - cd ..
 script:
   - ./gradlew check uploadArchives
+after_script:
+  - cd repo
+  - ls -al
+  - git status
+  - git add .
+  - git status
+  - cd ..
