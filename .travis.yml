@@ -12,3 +12,12 @@ before_script:
   - cd repo
   - git checkout gh-pages
   - cd ..
+deploy:
+  - ./gradlew uploadArchives
+  - cd repo
+  - ls -al
+  - git status
+  - git add .
+  - git status
+ after_script:
+  - rm -rf repo
