@@ -19,5 +19,5 @@ deploy:
   - git status
   - git add .
   - git status
- after_script:
+after_script:
   - rm -rf repo
