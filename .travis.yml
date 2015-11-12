@@ -12,3 +12,5 @@ before_script:
   - cd repo
   - git checkout gh-pages
   - cd ..
+script:
+  - ./gradlew check uploadArchives
