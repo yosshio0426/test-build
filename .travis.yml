@@ -1,3 +1,6 @@
+env:
+  gloval:
+    - secure: "rEhnUejXu5jqTSA4+qzDOpRIgWPJkgDtIm+C0gQ2CcxL67PXd0+Sns22Hb8BFDMIEVu/KAprq6/hyCyP7RqBqaj7Xng6P+LkZN91gp0O3PT85kCpdkkfWYSU7+5dGw+wsbQrnI3kJH4KkofxEE2IbU2s1t5G+Tb5ymFL1NJC3ZmriLHNQDl6HlXz8Yj9orqO4T1nEDs+AV9UQz5X9tRbQAVRtL2tmSq4QuaiSPuI5/t/lFZ9sqdGpvUcLQmhfRh7NvKMnN87h9wHiTJ3QVbu5mKkF45zYflnfMRNpCNMaKQjMtUnNKh012ufPZdcVUnyth4fkumV72QAMaVmS1faaD0CjRyjGrxA+VJmdm0y12buy4ta9cflNpCge3IX091Y202GvMR3GlM6qR2Mhvy0Zez1ZlXeSJ19mW8P3/SVBLBq4sAygM/A7PlzjLd7EwAg5UaHoDgdXfOaxZVbhTG8HDYcDJVGKO+V3Xt8riHo8lLill6ZIBFoGRy45ObAPitwYtAUulRTkik0VhNQTOz/yUhThtUYjRGt7dM2/71hs0xo4TbvLg00qR92YI3656jNxEFvFg8Pwj/XtH/20MG2f1FMan7c5c7tau/7ktUf2deZr9JdlAQkiCKUJLwcchnT35E9VGk1tzG05+3WN7IspNaaXRauK+x67uSGmfoR+CY="
 language: java
 jdk:
   - oraclejdk8
@@ -16,8 +19,7 @@ script:
   - ./gradlew check uploadArchives
 after_script:
   - cd repo
-  - ls -al
-  - git status
   - git add .
-  - git status
+  - git commit -m 'Update'
+  - git push --quiet https://$GH_TOKEN@github.com/yosshio0426/mvn-repo.git gh-pages 2> /dev/null
   - cd ..
